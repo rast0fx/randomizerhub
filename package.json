@@ -1,0 +1,22 @@
+{
+  "name": "randomizer-hub",
+  "version": "1.0.0",
+  "description": "A responsive full-stack web application for random decision making",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "randomizer",
+    "decision-maker",
+    "express",
+    "responsive"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

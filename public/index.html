@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randomizer Hub - Smart Decision Maker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-content">
+      <div class="logo">
+        <span class="logo-icon">🎲</span>
+        <h1>Randomizer Hub</h1>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn btn-icon" aria-label="Toggle Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h2>Can't decide what to do?</h2>
+      <p class="subtitle">Pick a category or enter custom options, hit spin, and let destiny make the choice!</p>
+    </section>
+
+    <!-- Category Selector -->
+    <section class="category-section">
+      <div id="categoryTabs" class="category-tabs" role="tablist" aria-label="Decision Categories">
+        <!-- Dynamic Category Tabs injected by app.js -->
+      </div>
+    </section>
+
+    <div class="app-grid">
+      <!-- Randomizer Interactive Display -->
+      <section class="card randomizer-card">
+        <div class="card-header">
+          <h3 id="currentCategoryTitle">Food & Dining</h3>
+          <span class="badge" id="itemCountBadge">0 options</span>
+        </div>
+
+        <div class="spinner-container">
+          <div id="spinnerDisplay" class="spinner-display" aria-live="polite">
+            <div class="spinner-placeholder">
+              <span class="placeholder-icon">✨</span>
+              <p>Ready to Spin!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spinner-controls">
+          <button id="spinBtn" class="btn btn-primary btn-lg btn-block">
+            <span class="btn-icon">🎲</span> Spin the Wheel!
+          </button>
+        </div>
+
+        <!-- Result Box -->
+        <div id="resultBox" class="result-box hidden" aria-live="assertive">
+          <div class="result-badge">Selected Choice</div>
+          <h4 id="resultTitle">Result Name</h4>
+          <p id="resultDesc">Result Description</p>
+        </div>
+      </section>
+
+      <!-- Manage Custom Options & View List -->
+      <section class="card options-card">
+        <div class="card-header">
+          <h3>Options in Category</h3>
+        </div>
+
+        <!-- Add Custom Item Form -->
+        <form id="addOptionForm" class="add-option-form">
+          <div class="form-group">
+            <label for="optionName" class="sr-only">Option Name</label>
+            <input type="text" id="optionName" class="form-input" placeholder="Add custom option (e.g. Sushi)" required>
+          </div>
+          <div class="form-group">
+            <label for="optionDesc" class="sr-only">Description (optional)</label>
+            <input type="text" id="optionDesc" class="form-input" placeholder="Description (optional)">
+          </div>
+          <button type="submit" class="btn btn-secondary">
+            <span>+</span> Add Choice
+          </button>
+        </form>
+
+        <!-- Current Options List -->
+        <div class="options-list-container">
+          <ul id="optionsList" class="options-list">
+            <!-- Dynamic option list injected by app.js -->
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Stats & History Section -->
+    <section class="stats-section">
+      <div class="card">
+        <div class="card-header">
+          <h3>📊 Decision Activity & History</h3>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-value" id="statTotalItems">0</span>
+            <span class="stat-label">Total Options Available</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="statTotalSpins">0</span>
+            <span class="stat-label">Total Decision Spins</span>
+          </div>
+        </div>
+
+        <div class="history-container">
+          <h4>Recent Decision Log</h4>
+          <ul id="historyList" class="history-list">
+            <li class="empty-history">No decisions logged yet. Give it a spin!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-content">
+      <p>&copy; 2025 Randomizer Hub. Designed for all devices & screen sizes.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
